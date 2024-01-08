@@ -1,0 +1,114 @@
+.filters {
+  width: 46.4rem;
+  flex-shrink: 0;
+  position: relative;
+  @media (max-width: 48em) {
+    width: 100%;
+  }
+  &__wrapper {
+    position: sticky;
+    top: 2rem;
+    left: 0;
+    z-index: 1;
+    background-color: $white;
+    border-radius: 1rem;
+    box-shadow: 0 0.4rem 1.6rem 0 rgba(0, 0, 0, 0.1);
+
+    padding: 4rem 0 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+
+    @media (max-width: 48em) {
+      position: static;
+      border-radius: 4rem;
+      padding: 4rem;
+      gap: 4rem;
+    }
+  }
+  &__title {
+    padding: 0 4rem;
+
+    font-size: 2.4rem;
+    font-weight: 600;
+    line-height: 2.4rem; /* 100% */
+    letter-spacing: 0.1rem;
+    text-transform: uppercase;
+
+    @media (max-width: 48em) {
+      padding: 0;
+      letter-spacing: 0.2rem;
+    }
+  }
+  &__content {
+    display: flex;
+    flex-direction: column;
+
+    @media (max-width: 48em) {
+      display: flex;
+      overflow: auto;
+      gap: 4rem;
+      flex-direction: row;
+    }
+  }
+  &__label {
+    padding: 2rem 4rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    transition: background 0.2s linear;
+    span {
+      font-size: 2.6rem;
+      line-height: 4rem; /* 153.846% */
+    }
+    &:hover {
+      background-color: #f1fcff;
+      transition: background 0.2s linear;
+    }
+    @media (max-width: 48em) {
+      padding: 0;
+      transition: none;
+      span {
+        width: max-content;
+        text-wrap: nowrap;
+      }
+      &:hover {
+        background: none;
+        transition: none;
+      }
+    }
+  }
+  &__checkbox {
+    display: none;
+    &:not(:disabled):checked ~ .filters__custom-checkbox {
+      border: 0.2rem solid $blue;
+      &::after {
+        display: block;
+      }
+    }
+  }
+  &__custom-checkbox {
+    width: 4rem;
+    height: 4rem;
+    border-radius: 0.4rem;
+    border: 0.2rem solid #9abbce;
+    position: relative;
+
+    &::after {
+      content: '';
+      width: 2.4rem;
+      height: 1.6rem;
+      background: url('../../assets/icons/check.svg') center / contain no-repeat;
+
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: none;
+    }
+    @media (max-width: 48em) {
+      border-radius: 0.8rem;
+    }
+  }
+}
