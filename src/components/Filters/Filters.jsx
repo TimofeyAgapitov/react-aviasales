@@ -2,7 +2,7 @@ import Label from './UI/Label';
 
 import { dataFilters } from '../../services/data';
 
-const Filters = () => {
+export const Filters = () => {
   return (
     <aside className="filters">
       <div className="filters__wrapper">
@@ -17,4 +17,3 @@ const Filters = () => {
   );
 };
 
-export default Filters;

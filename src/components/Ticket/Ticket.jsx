@@ -1,6 +1,6 @@
 import Info from './UI/Info';
 
-const Ticket = () => {
+export const Ticket = () => {
   return (
     <li className="ticket">
       <div className="ticket__wrapper">
@@ -16,4 +16,3 @@ const Ticket = () => {
   );
 };
 
-export default Ticket;

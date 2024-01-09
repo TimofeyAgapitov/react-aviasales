@@ -45,7 +45,7 @@
     }
 
     &:hover {
-      background-color: #f1fcff;
+      background-color: $hoverColor;
       transition: background 0.2s linear;
     }
   }

@@ -1,23 +1,15 @@
-import Header from './components/Header/Header';
-import Filters from './components/Filters/Filters';
-import Main from './components/Main/Main';
-import './App.scss';
+import { Header } from './components/Header';
+
+import Main from './pages/Main';
+import Orders from './pages/Orders';
+import Favourites from './pages/Favourites';
 
 const App = () => {
   return (
     <>
       <Header />
 
-      <main>
-        <section className="aviasales">
-          <div className="container">
-            <div className="aviasales__content">
-              <Filters />
-              <Main />
-            </div>
-          </div>
-        </section>
-      </main>
+      <Main />
     </>
   );
 };

@@ -1,6 +1,6 @@
-import Ticket from '../Ticket/Ticket';
+import { Ticket } from '../Ticket';
 
-const Tickets = () => {
+export const Tickets = () => {
   return (
     <ul className="tickets__list">
       <Ticket />
@@ -11,5 +11,3 @@ const Tickets = () => {
     </ul>
   );
 };
-
-export default Tickets;

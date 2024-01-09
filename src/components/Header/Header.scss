@@ -1,10 +1,50 @@
 .header {
-	width: 100%;
-	display: flex;
-	justify-content: center;
-	&__logo {
-		width: 12rem;
-		height: 12rem;
-		filter: drop-shadow(0rem 0.2rem 2.2rem rgba(55, 104, 142, 0.3)) drop-shadow(0rem 1.6rem 2.2rem rgba(55, 104, 142, 0.25));
-	}
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem 6rem;
+    margin-top: 4rem;
+    background-color: $white;
+    border-radius: 1rem;
+    box-shadow: 0 0.4rem 1.6rem rgba(0, 0, 0, 0.1);
+    @media (max-width: 48em) {
+      padding: 2rem 4rem;
+    }
+  }
+  &__logotype {
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+    &-icon {
+      width: 8rem;
+      height: 8rem;
+      filter: drop-shadow(0rem 0.2rem 2.2rem rgba(55, 104, 142, 0.3))
+        drop-shadow(0rem 1.6rem 2.2rem rgba(55, 104, 142, 0.25));
+    }
+    &-text {
+      font-size: 4rem;
+      font-style: italic;
+      font-weight: 600;
+      letter-spacing: 0.1rem;
+      color: $blue;
+      @media (max-width: 48em) {
+        display: none;
+      }
+    }
+  }
+  &__login {
+    font-size: 1.8rem;
+    font-weight: 600;
+    letter-spacing: 0.1rem;
+    padding: 2rem 4rem;
+    color: $white;
+    border-radius: 1rem;
+    background-color: $blue;
+    transition: background 0.2s linear;
+    &:hover {
+      background-color: rgba($blue, 0.8);
+      transition: background 0.2s linear;
+    }
+  }
 }

@@ -2,13 +2,24 @@
 $font: 'Open Sans', sans-serif; // шрифт по умолчанию
 
 // Цвета ==================================================
+
 $bg: #f3f7fa;
 $fontColor: #4a4a4a; // цвет текста по умолчанию
+$hoverColor: #f1fcff;
 
 $black: #000;
 $white: #fff;
 $blue: #2196f3;
 $gray: #a0b0b9;
+
+$dark-bg: #29262c;
+$dark-fontColor: #fff;
+$dark-hoverColor: #4a4a4a;
+// $dark-borderColor: #4a4a4a;
+
+$dark-white: #170c06;
+// $dark-grey: #585858;
+
 
 // Настройки ==============================================
 $sectionMargin: 0; // Отступ у секций

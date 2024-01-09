@@ -19,11 +19,14 @@ export const dataFilters = [
 export const dataSorting = [
   {
     title: 'Самый дешёвый',
+    value: 'cheapest',
   },
   {
     title: 'Самый быстрый',
+    value: 'fastest',
   },
   {
     title: 'Оптимальный',
+    value: 'optimal',
   },
 ];

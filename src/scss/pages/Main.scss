@@ -1,0 +1,11 @@
+.main {
+  padding: 4rem 0;
+  &__content {
+    display: flex;
+    justify-content: space-between;
+    gap: 4rem;
+    @media (max-width: 48em) {
+      flex-direction: column;
+    }
+  }
+}

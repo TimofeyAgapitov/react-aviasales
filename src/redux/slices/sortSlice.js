@@ -9,7 +9,7 @@ const sortSlice = createSlice({
   initialState,
   reducers: {
     setSortBy(state, action) {
-      state.filterValue = action.payload;
+      state.sortBy = action.payload;
     },
   },
 });
