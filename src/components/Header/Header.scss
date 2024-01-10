@@ -5,11 +5,12 @@
     justify-content: space-between;
     padding: 2rem 6rem;
     margin-top: 4rem;
-    background-color: $white;
+    background-color: var(--panel-color);
     border-radius: 1rem;
     box-shadow: 0 0.4rem 1.6rem rgba(0, 0, 0, 0.1);
     @media (max-width: 48em) {
       padding: 2rem 4rem;
+      margin-top: 0;
     }
   }
   &__logotype {
@@ -27,23 +28,36 @@
       font-style: italic;
       font-weight: 600;
       letter-spacing: 0.1rem;
-      color: $blue;
+      color: var(--blue-color);
       @media (max-width: 48em) {
         display: none;
       }
     }
   }
+  &__controls {
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+  }
+  &__theme {
+    cursor: pointer;
+    img {
+      width: 4.8rem;
+      height: 4.8rem;
+    }
+  }
   &__login {
+    display: none;
     font-size: 1.8rem;
     font-weight: 600;
     letter-spacing: 0.1rem;
     padding: 2rem 4rem;
-    color: $white;
+    color: var(--white-color);
     border-radius: 1rem;
-    background-color: $blue;
+    background-color: var(--blue-color);
     transition: background 0.2s linear;
     &:hover {
-      background-color: rgba($blue, 0.8);
+      background-color: rgba(#2196f3, 0.8);
       transition: background 0.2s linear;
     }
   }

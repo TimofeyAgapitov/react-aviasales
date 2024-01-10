@@ -4,7 +4,7 @@ import Main from './pages/Main';
 import Orders from './pages/Orders';
 import Favourites from './pages/Favourites';
 
-const App = () => {
+export const Root = () => {
   return (
     <>
       <Header />
@@ -14,4 +14,3 @@ const App = () => {
   );
 };
 
-export default App;

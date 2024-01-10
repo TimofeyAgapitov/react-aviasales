@@ -2,13 +2,18 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { Provider } from 'react-redux';
 import store from './redux/store';
-import App from './App.jsx';
+
+import { Root } from './Root.jsx';
 import './main.scss';
 
-ReactDOM.createRoot(document.getElementById('root')).render(
+const rootElement = document.getElementById('root');
+if (!rootElement) throw new Error('Failed to find root element');
+const root = ReactDOM.createRoot(rootElement);
+
+root.render(
   <React.StrictMode>
     <Provider store={store}>
-      <App />
+      <Root />
     </Provider>
   </React.StrictMode>
 );

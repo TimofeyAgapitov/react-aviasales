@@ -22,8 +22,8 @@ body {
   line-height: normal;
   margin: 0;
   padding: 0;
-  color: $fontColor; // цвет по умолчанию текста по сайту
-  background-color: $bg;
+  color: var(--font-color); // цвет по умолчанию текста по сайту
+  background-color: var(--bg-color);
 }
 
 // body.dark {

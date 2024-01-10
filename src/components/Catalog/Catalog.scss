@@ -12,10 +12,10 @@
     align-items: center;
     justify-content: center;
     text-align: center;
-    background-color: $blue;
+    background-color: var(--blue-color);
     border-radius: 1rem;
 
-    color: $white;
+    color: var(--white-color);
     font-size: 2.4rem;
     font-weight: 600;
     line-height: 4rem; /* 166.667% */
@@ -24,7 +24,7 @@
     transition: background 0.2s linear;
 
     &:hover {
-      background-color: rgba($blue, 0.8);
+      background-color: rgba(#2196f3, 0.8);
       transition: background 0.2s linear;
     }
   }

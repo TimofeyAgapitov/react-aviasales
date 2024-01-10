@@ -1,3 +1,5 @@
+import { Toggle } from './UI/Toggle';
+
 import logo from '../../assets/icons/logo.svg';
 
 export const Header = () => {
@@ -10,6 +12,7 @@ export const Header = () => {
           </div>
         </div>
         <div className="header__controls">
+          <Toggle />
           <button className="header__login">Войти</button>
         </div>
       </div>
