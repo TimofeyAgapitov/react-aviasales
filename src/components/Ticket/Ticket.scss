@@ -22,6 +22,9 @@
   &__logo {
     width: 22rem;
     height: 7.2rem;
+    img {
+      object-fit: contain;
+    }
   }
   &__info {
     display: flex;

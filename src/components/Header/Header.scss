@@ -46,6 +46,13 @@
       height: 4.8rem;
     }
   }
+  &__profile {
+    cursor: pointer;
+    img {
+      width: 4.8rem;
+      height: 4.8rem;
+    }
+  }
   &__login {
     display: none;
     font-size: 1.8rem;

@@ -1,17 +1,26 @@
-const InfoItem = () => {
+import { formatMinutesToHoursAndMinutes } from '../../../utils/formationDuration';
+import { calculateArrivalTime } from '../../../utils/formationTime';
+
+const InfoItem = ({ data }) => {
   return (
     <li className="ticket__wrap">
       <div className="ticket__item">
-        <span>MOW – HKT</span>
-        <strong>10:45 – 08:00</strong>
+        <span>
+          {data.origin} – {data.destination}
+        </span>
+        <strong>{calculateArrivalTime(data.date, data.duration)}</strong>
       </div>
       <div className="ticket__item">
         <span>В пути</span>
-        <strong>21ч 15м</strong>
+        <strong>{formatMinutesToHoursAndMinutes(data.duration)}</strong>
       </div>
       <div className="ticket__item">
-        <span>2 пересадки</span>
-        <strong>HKG, JNB</strong>
+        <span>
+          {data.stops.length === 0
+            ? 'нет пересадок'
+            : `${data.stops.length} пересадки`}
+        </span>
+        <strong>{data.stops.join(', ')}</strong>
       </div>
     </li>
   );

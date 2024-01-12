@@ -8,7 +8,7 @@ const sortSlice = createSlice({
   name: 'sort',
   initialState,
   reducers: {
-    setSortBy(state, action) {
+    setSortBy: (state, action) => {
       state.sortBy = action.payload;
     },
   },

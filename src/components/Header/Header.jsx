@@ -1,6 +1,9 @@
+import React from 'react';
+
 import { Toggle } from './UI/Toggle';
 
 import logo from '../../assets/icons/logo.svg';
+import profile from '../../assets/icons/profile.svg';
 
 export const Header = () => {
   return (
@@ -13,6 +16,9 @@ export const Header = () => {
         </div>
         <div className="header__controls">
           <Toggle />
+          <button className="header__profile">
+            <img src={profile} alt="" />
+          </button>
           <button className="header__login">Войти</button>
         </div>
       </div>
