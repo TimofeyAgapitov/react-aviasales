@@ -6,7 +6,6 @@ export const Catalog = () => {
     <section className="catalog">
       <Sorting />
       <Tickets />
-      <button className="catalog__btn">Показать еще 5 билетов!</button>
     </section>
   );
 };

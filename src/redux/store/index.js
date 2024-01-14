@@ -4,6 +4,7 @@ import sortReducer from '../slices/sortSlice';
 import themeReducer from '../slices/themeSlice';
 import filterReducer from '../slices/filtersSlice';
 import ticketsReducer from '../slices/ticketsSlice';
+import loadReducer from '../slices/loadSlice';
 
 const store = configureStore({
   reducer: {
@@ -11,6 +12,7 @@ const store = configureStore({
     theme: themeReducer,
     filters: filterReducer,
     tickets: ticketsReducer,
+    load: loadReducer,
   },
 });
 

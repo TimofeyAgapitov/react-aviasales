@@ -17,7 +17,7 @@ const InfoItem = ({ data }) => {
       <div className="ticket__item">
         <span>
           {data.stops.length === 0
-            ? 'нет пересадок'
+            ? 'без пересадок'
             : `${data.stops.length} пересадки`}
         </span>
         <strong>{data.stops.join(', ')}</strong>

@@ -15,7 +15,7 @@ export const Filters = () => {
       <div className="filters__wrapper">
         <div className="filters__title">Количество пересадок</div>
         <div className="filters__content">
-          {dataFilters.map((item, index) => (
+          {dataFilters?.map((item, index) => (
             <Label
               key={item.title}
               title={item.title}

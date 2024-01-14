@@ -4,12 +4,17 @@ import { useSelector, useDispatch } from 'react-redux';
 
 import { fetchTickets } from '../../redux/actions/asyncActionsTickets';
 
+import { setNext } from '../../redux/slices/loadSlice';
+
 import { Ticket } from '../Ticket';
+import { Spiner } from '../Spiner';
 
 export const Tickets = () => {
   const dispatch = useDispatch();
 
   const { items, status } = useSelector((state) => state.tickets);
+  const loading = useSelector((state) => state.load.count);
+
   const [tickets, setTickets] = useState([]);
 
   useEffect(() => {
@@ -23,12 +28,23 @@ export const Tickets = () => {
     if (items.tickets) setTickets(items.tickets);
   }, [items]);
 
+  const handleShowMoreClick = () => {
+    dispatch(setNext(5));
+  };
+
   return (
-    <ul className="tickets__list">
-      {status === 'loading' && <p>Загрузка</p>}
-      {status === 'error' && <p>Ошибка при загрузке</p>}
-      {status === 'success' &&
-        tickets.map((item, id) => <Ticket key={id} {...item} />)}
-    </ul>
+    <>
+      <ul className="tickets__list">
+        {status === 'loading' && <Spiner />}
+        {status === 'error' && <p>Ошибка при загрузке</p>}
+        {status === 'success' &&
+          tickets
+            ?.slice(0, loading)
+            .map((item, id) => <Ticket key={id} {...item} />)}
+      </ul>
+      <button className="tickets__more" onClick={handleShowMoreClick}>
+        Показать еще 5 билетов!
+      </button>
+    </>
   );
 };
