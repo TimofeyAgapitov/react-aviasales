@@ -42,7 +42,7 @@ export const Tickets = () => {
           resultList
         ) : (
           <Notification type="info">
-            Рейсов, подходящий под заданные фильтры, не найдено
+            Рейсов, подходящих под заданные фильтры, не найдено
           </Notification>
         )}
       </ul>
