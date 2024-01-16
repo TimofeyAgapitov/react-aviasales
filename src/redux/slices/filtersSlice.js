@@ -3,7 +3,7 @@ import { createSlice } from '@reduxjs/toolkit';
 import { dataFilters } from '../../services/data';
 
 const initialState = {
-  filterBy: dataFilters,
+  filterBy: [0, 1, 2, 3, 4],
 };
 
 const filterSlice = createSlice({
@@ -14,24 +14,26 @@ const filterSlice = createSlice({
       const { id } = action.payload;
 
       if (id === 0) {
-        const allFilters = state.filterBy.find((item) => item.id === id);
-        console.log(allFilters);
-        allFilters.active = !allFilters.active;
-
-        state.filterBy.forEach((item) => {
-          if (item.id !== 0) {
-            item.active = allFilters.active;
-          }
-        });
+        if (state.filterBy.includes(0)) {
+          state.filterBy = [];
+        } else {
+          state.filterBy = [0, 1, 2, 3, 4];
+        }
       } else {
-        const selectedFilters = state.filterBy.find((item) => item.id === id);
-        selectedFilters.active = !selectedFilters.active;
+        if (state.filterBy.includes(id)) {
+          state.filterBy = state.filterBy.filter(
+            (item) => item !== id && item !== 0
+          );
+        } else {
+          state.filterBy = [...state.filterBy, id];
 
-        const allOtherFilters = state.filterBy
-          .filter((item) => item.id !== 0)
-          .every((item) => item.active);
-        const allFilters = state.filterBy.find((item) => item.id === 0);
-        allFilters.active = allOtherFilters;
+          const containsAllNumbers = [1, 2, 3, 4].every((number) =>
+            state.filterBy.includes(number)
+          );
+          if (containsAllNumbers && !state.filterBy.includes(0)) {
+            state.filterBy = [...state.filterBy, 0];
+          }
+        }
       }
     },
   },

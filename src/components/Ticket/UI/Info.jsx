@@ -1,10 +1,11 @@
 import InfoItem from './InfoItem';
 
-const Info = (props) => {
+const Info = ({ segments }) => {
   return (
     <ul className="ticket__info">
-      <InfoItem data={props.segments[0]} />
-      <InfoItem data={props.segments[1]} />
+      {segments?.map((el, id) => (
+        <InfoItem key={id} {...el} />
+      ))}
     </ul>
   );
 };

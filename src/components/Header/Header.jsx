@@ -19,7 +19,6 @@ export const Header = () => {
           <button className="header__profile">
             <img src={profile} alt="" />
           </button>
-          <button className="header__login">Войти</button>
         </div>
       </div>
     </header>

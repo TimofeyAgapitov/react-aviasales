@@ -6,8 +6,8 @@ export const Sorting = () => {
   return (
     <div className="sorting">
       <div className="sorting__list">
-        {dataSorting?.map((item, index) => (
-          <SortingBtn key={item.title} {...item} />
+        {dataSorting?.map((el, index) => (
+          <SortingBtn key={el.title} {...el} />
         ))}
       </div>
     </div>

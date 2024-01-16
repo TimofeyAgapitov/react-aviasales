@@ -1,36 +1,26 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-import { fetchTickets } from '../actions/asyncActionsTickets';
-import { Status } from '../../services/data';
-
 const initialState = {
-  items: [],
-  status: Status.LOADING,
+  tickets: [],
+  status: 'loading',
 };
 
 const ticketsSlice = createSlice({
   name: 'tickets',
   initialState,
   reducers: {
-    setTickets: (state, action) => {
-      state.items = action.payload;
+    setTickets(state, action) {
+      state.tickets = [...state.tickets, ...action.payload];
+      state.status = 'loading';
     },
-  },
-  extraReducers: (builder) => {
-    builder.addCase(fetchTickets.pending, (state, action) => {
-      state.status = Status.LOADING;
-      state.items = [];
-    });
-    builder.addCase(fetchTickets.fulfilled, (state, action) => {
-      state.status = Status.SUCCESS;
-      state.items = action.payload;
-    });
-    builder.addCase(fetchTickets.rejected, (state, action) => {
-      state.status = Status.ERROR;
-      state.items = [];
-    });
+    setCompleted(state) {
+      state.status = 'completed';
+    },
+    setError(state) {
+      state.status = 'error';
+    },
   },
 });
 
-export const { setTickets } = ticketsSlice.actions;
+export const { setTickets, setCompleted, setError } = ticketsSlice.actions;
 export default ticketsSlice.reducer;

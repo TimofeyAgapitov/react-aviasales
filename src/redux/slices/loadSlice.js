@@ -1,18 +1,18 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
-  count: 5,
+  loadCount: 5,
 };
 
 const loadSlice = createSlice({
   name: 'load',
   initialState,
   reducers: {
-    setNext: (state, action) => {
-      state.count += action.payload;
+    setLoadMore: (state, action) => {
+      state.loadCount += action.payload;
     },
   },
 });
 
-export const { setNext } = loadSlice.actions;
+export const { setLoadMore } = loadSlice.actions;
 export default loadSlice.reducer;
