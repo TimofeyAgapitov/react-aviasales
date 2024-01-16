@@ -6,7 +6,8 @@ import { setLoadMore } from '../../redux/slices/loadSlice';
 import { sorterTickets } from '../../utils/sorterTickets';
 
 import { Ticket } from '../Ticket';
-import { Spiner } from '../Spiner';
+import { ProgressBar } from '../ProgressBar';
+import { Notification } from '../Notification';
 
 export const Tickets = () => {
   const dispatch = useDispatch();
@@ -33,15 +34,23 @@ export const Tickets = () => {
   return (
     <>
       <ul className="tickets__list">
-        {status === 'loading' ? <Spiner /> : null}
-        {status === 'error' ? <p>Ошибка при загрузке</p> : null}
-        {isSorted ? resultList : null}
+        {status === 'loading' && <ProgressBar />}
+        {status === 'error' && (
+          <Notification type="error">Ошибка при загрузке</Notification>
+        )}
+        {isSorted ? (
+          resultList
+        ) : (
+          <Notification type="info">
+            Рейсов, подходящий под заданные фильтры, не найдено
+          </Notification>
+        )}
       </ul>
-      {isSorted && (
+      {isSorted ? (
         <button className="tickets__more" onClick={handleShowMoreClick}>
           Показать еще 5 билетов!
         </button>
-      )}
+      ) : null}
     </>
   );
 };
