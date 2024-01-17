@@ -8,13 +8,16 @@ export const Notification = ({ type, children }) => {
       variant="outlined"
       severity={type}
       style={{
-        color: `${type === 'error' ? 'red' : '#2196f3'}`,
+        color: `${type === 'error' ? '#e91e63' : '#2196f3'}`,
         fontSize: '1.6rem',
         alignItems: 'center',
+        borderColor: `${type === 'error' ? '#e91e63' : '#2196f3'}`,
+        '& .MuiAlertIcon': {
+          color: `${type === 'error' ? '#e91e63' : '#2196f3'}`,
+        },
       }}
     >
       {children}
     </Alert>
   );
 };
-null;
