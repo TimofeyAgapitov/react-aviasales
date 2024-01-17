@@ -8,8 +8,9 @@ export const Notification = ({ type, children }) => {
       variant="outlined"
       severity={type}
       style={{
-        fontSize: '1.8rem',
         color: `${type === 'error' ? 'red' : '#2196f3'}`,
+        fontSize: '1.6rem',
+        alignItems: 'center',
       }}
     >
       {children}
